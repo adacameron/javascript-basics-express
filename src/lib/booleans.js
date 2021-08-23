@@ -1,98 +1,32 @@
-const negate = a => {
-  return !a;
-};
+const negate = a => !a;
 
-const both = (a, b) => {
-  return a && b;
-};
+const both = (a, b) => a && b;
 
-const either = (a, b) => {
-  return a || b;
-};
+const either = (a, b) => a || b;
 
-const none = (a, b) => {
-  return !a && !b;
-};
+const none = (a, b) => !a && !b;
 
-const one = (a, b) => {
-  return (a && !b) || (!a && b);
-};
+const one = (a, b) => (a && !b) || (!a && b);
 
-const truthiness = a => {
-  Boolean(a);
-  return a ? true : false;
-};
+const truthiness = a => Boolean(a);
 
-// Tried an if statement for this, but can't figure out why it won't work:
+const isEqual = (a, b) => a === b;
 
-// const truthiness = a => {
-// if (a == true) {
-//   return true;
-// };
-// return false;
-// };
+const isGreaterThan = (a, b) => a > b;
 
-const isEqual = (a, b) => {
-  if (a === b) {
-    return true;
-  }
-  return false;
-};
+const isLessThanOrEqualTo = (a, b) => a <= b;
 
-const isGreaterThan = (a, b) => {
-  if (a > b) {
-    return true;
-  }
-  return false;
-};
+const isOdd = a => a % 2 !== 0;
 
-const isLessThanOrEqualTo = (a, b) => {
-  if (a <= b) {
-    return true;
-  }
-  return false;
-};
+const isEven = a => a % 2 === 0;
 
-const isOdd = a => {
-  if (a % 2 === 0) {
-    return false;
-  }
-  return true;
-};
+const isSquare = a => Math.sqrt(a) % 1 === 0;
 
+const startsWith = (char, string) => !!string.startsWith(char);
 
-const isEven = a => {
-  if (a % 2 === 0) {
-    return true;
-  }
-  return false;
-};
+const containsVowels = string => !!string.match(/[aeiou]/i);
 
-const isSquare = a => {
-  return Math.sqrt(a) % 1 === 0
-};
-
-const startsWith = (char, string) => {
-  if (string.startsWith(char)) {
-    return true;
-  }
-  return false;
-};
-// startsWith() only accepts a single character
-
-const containsVowels = string => {
-  if (string.match(/[aeiou]/i)) {
-    return true;
-  }
-  return false;
-};
-
-const isLowerCase = string => {
-  if (string === string.toLowerCase()) {
-    return true;
-  };
-  return false;
-};
+const isLowerCase = string => string === string.toLowerCase();
 
 module.exports = {
   negate,
